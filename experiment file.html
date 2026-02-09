@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<title>Pirtengen, Setuksel se Velkhel</title>
+
+<style>
+  body {
+    font-family: 'Libre Baskerville', serif;
+    background-color: #000000;
+    color: #ffffff;
+    transition: background-color 0.5s ease;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 80px;
+  }
+  
+  .highlight {
+    background-color: none;
+    display: none;
+    margin-top: 5px;
+    padding: 2px 5px;
+  }
+
+  .clickable {
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: bold;
+    display: inline-block;
+    transition: color 0.3s ease;
+  }
+  
+  .clickable:hover {
+    color: #cccccc;
+  }
+
+  .item {
+    margin-bottom: 10px;
+  }
+  
+  .ipa {
+    font-family: Consolas, "Courier New", monospace;
+  }
+
+  #etymologyModeBtn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #333333;
+    color: #ffffff;
+    border: 1px solid #666666;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;
+    z-index: 1000;
+    transition: all 0.3s ease;
+  }
+
+  #etymologyModeBtn:hover {
+    background-color: #444444;
+  }
+
+  .etymology-active {
+    background-color: #f5f5f5 !important;
+    color: #000000 !important;
+  }
+
+  .etymology-active .clickable {
+    color: #000000 !important;
+    cursor: default !important;
+  }
+
+  .etymology-active .clickable:hover {
+    color: #000000 !important;
+  }
+
+  /* Special styling for split etymology elements */
+  .etymology-split {
+    display: none;
+  }
+  
+  .etymology-active .etymology-split {
+    display: inline;
+  }
+  
+  .etymology-active .etymology-original {
+    display: none;
+  }
+  
+  .etymology-clickable {
+    cursor: pointer;
+    color: #000000;
+    font-weight: bold;
+    display: inline-block;
+    transition: color 0.3s ease;
+    margin: 0 2px;
+  }
+  
+  .etymology-clickable:hover {
+    color: #555555;
+    text-decoration: underline;
+  }
+
+  /* For year 1971 split */
+  .year-split-container {
+    display: inline;
+  }
+
+  .year-split-word {
+    display: inline-block;
+    margin: 0 1px;
+  }
+  
+  /* Special styling for 1971 hover in normal mode */
+  #year-1971 {
+    transition: all 0.3s ease;
+  }
+</style>
+</head>
+<body>
+
+<button id="etymologyModeBtn">Etymology Mode</button>
+
+<br><center>
+<div class="item">
+<i><big><big><big><big><big><big><span class="clickable etymology-original" onclick="toggleText('1')">Pirtengen, Setuksel, se Velkhel</span>
+<span class="etymology-split">
+  <span class="etymology-clickable" onclick="toggleEtymology('pirtengen')">Pirtengen,</span>
+  <span class="etymology-clickable" onclick="toggleEtymology('setuksel')">Setuksel,</span>
+  <span class="etymology-clickable" onclick="toggleEtymology('se3')">se</span>
+  <span class="etymology-clickable" onclick="toggleEtymology('velkhel')">Velkhel</span>
+</span>  </big></big></big></big></big></big></i>
+<div id="1" class="highlight">
+<span class="ipa">/pɪrtəŋːən, sətʊksəl, sə vəlχəl/</span> <br>
+<span class="ipa">[pɪɾt̪əŋːə̃n̪, sət̪ʊksɬ̩ sə̆ vəɬχə̆ɬ]</span> <br>
+<i>Famine, Affluence and Morality</i>
+</div>
+
+<div id ="etym-pirtengen" class = "highlight">PIR</div>
+<div id ="etym-setuksel" class = "highlight">SET</div>
+<div id ="etym-se3" class = "highlight">SET</div>
+<div id ="etym-velkhel" class = "highlight">VEL</div>
+</center>
+</div>
+
+<div class="item">
+  <i><center><span class="clickable" onclick="toggleText('2')">Peter Singer dźágge, 1972</span></i>
+  <div id="2" class="highlight">
+<span class="ipa">/pitər sɪŋːər d͡ʒægːə, tʊpistə hʊkːɪŋːə dəvəm tʊpsə dəsət͡ʃːəm ʃɪd͡ʒːu sə d͡ʒɪχːə/</span> <br>
+<span class="ipa">[pʲitr̩ sɪŋːə̆ɾ d͡ʒægːə̆, t̪ʊpʲis̪t̪ə hʊkːɪŋːə dɨ̆və̃m t̪ʊpsə d̪ɨ̆sət͡ʃːə̃m ʃɪd͡ʒːu sɨ̆ d͡ʒɪχːə̆]</span> <br>
+<i>by Peter Singer (1972)</i>
+</div></center>
+</div>
+<big>
+<!-- Khretgenemde with etymology mode -->
+<span class="clickable etymology-original" onclick="toggleText('khretgenemde')">Khretgenemde,</span>
+<span class="etymology-split">
+  <span class="etymology-clickable" onclick="toggleEtymology('khretgenemde')">Khretgenemde,</span>
+</span>
+
+<!-- zunne Dźúvepten with etymology mode -->
+<span class="clickable etymology-original" onclick="toggleText('zunne')">zunne Dźúvepten</span>
+<span class="etymology-split">
+  <span class="etymology-clickable" onclick="toggleEtymology('zunne')">zunne</span> 
+  <span class="etymology-clickable" onclick="toggleEtymology('dzuvepten')">Dźúvepten</span>
+</span>
+
+<!-- 1971 with etymology mode -->
+<span class="clickable etymology-original" id="year-1971" 
+      onmouseover="hoverYear1971(true)" 
+      onmouseout="hoverYear1971(false)" 
+      onclick="toggleText('1971')">1971,</span>
+<span class="etymology-split">
+  <span class="etymology-clickable" onclick="toggleEtymology('tupiste')">tupíste</span>
+  <span class="etymology-clickable" onclick="toggleEtymology('hukkinge')">hukkinge</span>
+  <span class="etymology-clickable" onclick="toggleEtymology('devem')">devem</span>
+  <span class="etymology-clickable" onclick="toggleEtymology('tupse')">tupse</span>
+  <span class="etymology-clickable" onclick="toggleEtymology('desetsem')">desetṡem</span>
+  <span class="etymology-clickable" onclick="toggleEtymology('sidzu')">śidżu</span>
+  <span class="etymology-clickable" onclick="toggleEtymology('se')">se</span>
+  <span class="etymology-clickable" onclick="toggleEtymology('ve')">ve,</span>
+</span>
+
+<!-- Bengál-Kuytemde emágge with etymology mode -->
+<span class="clickable etymology-original" onclick="toggleText('bengal-kutemde emágge')">Bengál-Kuytemde emágge</span>
+<span class="etymology-split">
+  <span class="etymology-clickable" onclick="toggleEtymology('bengal-kutemde')">Bengál-Kuytemde</span>
+  <span class="etymology-clickable" onclick="toggleEtymology('emagge')">emágge</span>
+</span>
+
+<span class="clickable etymology-original" onclick="toggleText('ver stette táqqe se kuruddemme de krustem')"> ver stette, táqqe, se kuruddemme de krutsem,</span>
+<span class="etymology-split">
+  <span class="etymology-clickable" onclick="toggleEtymology('ver')">ver</span>
+  <span class="etymology-clickable" onclick="toggleEtymology('stette')">stette</span>
+  <span class="etymology-clickable" onclick="toggleEtymology('taqqe')">táqqe</span>
+  <span class="etymology-clickable" onclick="toggleEtymology('se2')">se</span>
+  <span class="etymology-clickable" onclick="toggleEtymology('kuruddemme')">kuruddemme</span>
+  <span class="etymology-clickable" onclick="toggleEtymology('de')">de</span>
+  <span class="etymology-clickable" onclick="toggleEtymology('krustem')">krutsem</span>,
+</span>
+
+<span class="clickable etymology-original" onclick="toggleText('sukke dźengenen khudeken')"> sukke dźengenen khudeken.</span>
+<span class="etymology-split">
+  <span class="etymology-clickable" onclick="toggleEtymology('sukke')">sukke</span>
+  <span class="etymology-clickable" onclick="toggleEtymology('dzengenen')">dźengenen</span>
+  <span class="etymology-clickable" onclick="toggleEtymology('khudeken')">khudeken</span>.
+</span>
+</big>
+
+<!-- Normal mode explanations -->
+<div id ="khretgenemde" class = "highlight"> 
+khretg-en-emde <br>
+write.ɪᴍᴘᴇʀꜰ-𝟣ᴘ.ɴᴘꜱᴛ-ᴛᴇᴍ.ᴄᴠʙ <br>
+as I am writing (this), ...</div>
+
+<div id ="zunne" class = "highlight"> 
+zunne Dźúvepten<br>
+now November</div>
+
+<div id ="1971" class = "highlight"> 
+tupíste hukkinge de-ve-m tupse de-setṡe-m śidżu se ve <br>
+current.century/AD 1000 ᴏʀᴅ.one.ɴᴍʟᴢ 100 ᴏʀᴅ.nine.ɴᴍʟᴢ 70 and ve<br>
+1971
+</div>
+
+<div id ="bengal-kutemde emágge" class = "highlight"> 
+Bengál-Kuytem-de em-ágge <br>
+Bengal east-ɢᴇɴ ɴᴍʟᴢ-ʟᴏᴄ <br>
+in East Bengal <br>
+<small> <i>'em' ɴᴍʟᴢ serves as a placeholder noun</small></i></div>
+
+<div id ="ver stette táqqe se kuruddemme de krustem" class = "highlight"> 
+ver ste-tte, táqqe, se kurudde-mme de+krutse-m <br>
+without food-ᴅᴀᴛ, shelter.ᴅᴀᴛ and help-ɴᴍʟᴢ.ᴅᴀᴛ ᴀᴅᴊᴢ+heal-ɴᴍʟᴢ <br>
+without food, shelter and medical aid</div>
+
+<div id ="sukke dźengenen khudeken" class = "highlight"> 
+sukke dźengen-en khud-eken <br>
+thus person-ᴘʟ die.ɪᴍᴘᴇʀꜰ-𝟥ᴘ.ᴘʟ.ɴᴘꜱᴛ<br>
+and so, people are dying</div>
+
+<!-- Etymology mode explanations -->
+<div id ="etym-zunne" class = "highlight">Z</div>
+<div id ="etym-dzuvepten" class = "highlight">D</div>
+<div id ="etym-khretgenemde" class = "highlight">K</div>
+
+<!-- 1971 split etymology -->
+<div id ="etym-tupiste" class = "highlight">TUO</div>
+<div id ="etym-hukkinge" class = "highlight">HUKK</div>
+<div id ="etym-devem" class = "highlight">VEM</div>
+<div id ="etym-tupse" class = "highlight">TUPS</div>
+<div id ="etym-desetsem" class = "highlight">DESETS</div>
+<div id ="etym-sidzu" class = "highlight">DZU</div>
+<div id ="etym-se" class = "highlight">SE</div>
+<div id ="etym-ve" class = "highlight">VE</div>
+
+<!-- Other word etymologies -->
+<div id ="etym-bengal-kutemde" class = "highlight">BENGAL-KUY</div>
+<div id ="etym-emagge" class = "highlight">EM</div>
+<div id ="etym-ver" class = "highlight">VER</div>
+<div id ="etym-stette" class = "highlight">STET</div>
+<div id ="etym-taqqe" class = "highlight">TAQ</div>
+<div id ="etym-se2" class = "highlight">SE</div>
+<div id ="etym-kuruddemme" class = "highlight">KURUD</div>
+<div id ="etym-de" class = "highlight">DE</div>
+<div id ="etym-krustem" class = "highlight">KRUST</div>
+<div id ="etym-sukke" class = "highlight">SUK</div>
+<div id ="etym-dzengenen" class = "highlight">DZENG</div>
+<div id ="etym-khudeken" class = "highlight">KHUD</div>
+
+<div class="item">
+  <span class="clickable" onclick="toggleText('3')">></span>
+  <div id="3" class="highlight">
+<span class="ipa">/χrətgənəmdə, zʊnːə d͡ʒuvəptən tʊpistə hʊkːɪŋːə dəvəm tʊpsə dəsət͡ʃːəm ʃɪd͡ʒːu sə və, bəŋːæl kʊjtəmd‿əmægːə vər stətːə, tækʼːə, sə kʊrʊdːəmːə də krʊtsəm, sʊkːə d͡ʒəŋːənən χʊdəkən/</span> <br>
+<br>
+<span class="ipa">[χɾət̪gɨn̪ə̃md̪ə, zʊn̪ːə̆ d͡ʒuvəpt̪ə̃n̪ t̪ʊpʲis̪t̪ə hʊkːɪŋːə dɨ̆və̃m t̪ʊpsə d̪ɨ̆sət͡ʃːə̃m ʃɪd͡ʒːu sɨ̆ və, bəŋːæl kʷɪʲt̪əmd̪‿əmægːə̆ və̆r s̪t̪ə̆t̪ːə, t̪ækʼːə, sə̆ kʊɾʊd̪ːə̆mːə d̪ə̆ kɾʊt̪sə̃m, sʊkːə̆ d͡ʒəŋːə̆n̪ə̃n̪ χʊd̪ə̆kə̃n̪]</span> <br> <br>
+<big><i>As I write this, in November 1971, people are dying in East Bengal from lack of food, shelter, and medical care.</i></big></div>
+</div>
+
+<script>
+  let currentVisible = null;
+  let etymologyMode = false;
+  let currentEtymologyVisible = null;
+
+  function toggleText(id) {
+    if (etymologyMode) return;
+    
+    const element = document.getElementById(id);
+
+    if (currentVisible === id) {
+      element.style.display = 'none';
+      currentVisible = null;
+    } else {
+      if (currentVisible) {
+        document.getElementById(currentVisible).style.display = 'none';
+      }
+      element.style.display = 'block';
+      currentVisible = id;
+    }
+  }
+
+  function toggleEtymology(id) {
+    if (!etymologyMode) return;
+    
+    const element = document.getElementById('etym-' + id);
+
+    if (currentEtymologyVisible === id) {
+      element.style.display = 'none';
+      currentEtymologyVisible = null;
+    } else {
+      if (currentEtymologyVisible) {
+        document.getElementById('etym-' + currentEtymologyVisible).style.display = 'none';
+      }
+      element.style.display = 'block';
+      currentEtymologyVisible = id;
+    }
+  }
+
+  function hoverYear1971(hoverOn) {
+    if (etymologyMode) return;
+    
+    const yearElement = document.getElementById('year-1971');
+    if (hoverOn) {
+      yearElement.innerHTML = 'tupíste hukkinge devem tupse desetṡem śidżu se ve,';
+    } else {
+      yearElement.innerHTML = '1971,';
+    }
+  }
+
+  function toggleEtymologyMode() {
+    etymologyMode = !etymologyMode;
+    const body = document.body;
+    const btn = document.getElementById('etymologyModeBtn');
+    
+    if (etymologyMode) {
+      body.classList.add('etymology-active');
+      btn.textContent = 'Normal Mode';
+      
+      // Close all open normal dropdowns
+      if (currentVisible) {
+        document.getElementById(currentVisible).style.display = 'none';
+        currentVisible = null;
+      }
+      
+      // Close any open etymology dropdowns
+      if (currentEtymologyVisible) {
+        document.getElementById('etym-' + currentEtymologyVisible).style.display = 'none';
+        currentEtymologyVisible = null;
+      }
+      
+      // Reset 1971 text in case it was hovered
+      const yearElement = document.getElementById('year-1971');
+      yearElement.innerHTML = '1971,';
+    } else {
+      body.classList.remove('etymology-active');
+      btn.textContent = 'Etymology Mode';
+      
+      // Close any open etymology dropdowns
+      if (currentEtymologyVisible) {
+        document.getElementById('etym-' + currentEtymologyVisible).style.display = 'none';
+        currentEtymologyVisible = null;
+      }
+      
+      // Reset 1971 text in case it was hovered
+      const yearElement = document.getElementById('year-1971');
+      yearElement.innerHTML = '1971,';
+    }
+  }
+
+  // Initialize the etymology mode button
+  document.getElementById('etymologyModeBtn').addEventListener('click', toggleEtymologyMode);
+</script>
+
+</body>
+</html>
